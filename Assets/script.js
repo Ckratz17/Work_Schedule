@@ -1,15 +1,15 @@
 var saveButton = document.querySelectorAll(".saveBtn")
 function saveTasks() {
     
-  let task = $(this).siblings(".description").text();
-  let rowHour = $(this).siblings(".hour").val();
-  console.log(rowHour);
+  let userinput = $(this).siblings(".description").text();
+  let Hours = $(this).siblings(".hour").val();
+  console.log(Hours);
   console.log(task);
   if (task === "") {
-      localStorage.setItem(task, "")
+      localStorage.setItem(userinput, "")
 }
 else {
-  localStorage.setItem(rowHour, task);
+  localStorage.setItem(Hours, userinput);
   
 }}
 $('.saveBtn').click(saveTasks)
