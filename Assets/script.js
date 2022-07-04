@@ -153,11 +153,11 @@ function hourSix() {
   if (hour > 18 && hour < 20) {
     $('.six').removeClass('').addClass("present")
   }
-    else if (hour > 19) {
+    else if (hour > 18) {
       $('.six').removeClass('').addClass("past")
     }
     else{
-      $('.six').removeClass('').addClass("future")
+      $('.six').removeClass('present').addClass("future")
     }
 }
 hourSix()

@@ -7,4 +7,4 @@ When the time of day matches the hour of the time marked, the text box will have
 When the user clicks the button, the text content should be saved to local storage.
 When the user refreshes the page, the saved text is still displayed in the box.
 
-[a link]()
+[a link](https://ckratz17.github.io/Work_Schedule/)
