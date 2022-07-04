@@ -1,33 +1,24 @@
-setInterval(() =>{
-    var time= moment().format("dddd, MMM do")
-    $("#currentDay").text(time);
-})
+var saveButton = document.querySelectorAll(".saveBtn")
+function saveTasks() {
     
-var inputGroup = document.querySelector(".description")
-var submit = document.querySelector(".saveBtn")
-let Storage = localStorage.getItem(inputGroup)
-  ? JSON.parse(localStorage.getItem(inputGroup))
-  : [];
-
+  let task = $(this).siblings(".description").text();
+  let rowHour = $(this).siblings(".hour").val();
+  console.log(rowHour);
+  console.log(task);
+  if (task === "") {
+      localStorage.setItem(task, "")
+}
+else {
+  localStorage.setItem(rowHour, task);
   
+}}
+$('.saveBtn').click(saveTasks)
 
-//   var checkTime = function () {
-//     var hour = $(".hour").text().trim();
 
-//     var time = moment(hour, "LT");
-//     console.log(time)
+setInterval(() =>{
+  var time= moment().format("dddd, MMM Do")
+  $("#currentDay").text(time);
+});
 
-//     //remove any old classes from element
-//     // $(".hour").removeClass(".present .past .future");
 
-//     // apply new class if task is near/over due date
-//     if (moment().isAfter(time)) {
-//         $(".hour").addClass(".past");
-//     } else if (moment().isBefore(time)) {
-//         $(".hour").addClass(".future");
-//     } else {
-//         $(".hour").addClass(".present");
-//     }
-// }
 
-// checkTime();

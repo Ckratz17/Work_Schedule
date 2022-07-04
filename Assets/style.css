@@ -21,7 +21,7 @@ textarea {
   border-bottom: 10px solid black;
 }
 
-.description {
+.userInput {
   white-space: pre-wrap;
 }
 
@@ -63,15 +63,12 @@ textarea {
   border-bottom-right-radius: 15px;
   background-color: #06aed5;
   color: white;
+  width: 35px;
 }
 
 .saveBtn i:hover {
   font-size: 20px;
   transition: all 0.3s ease-in-out;
-}
-
-.col {
-  border-top: 1px solid;
 }
 
 .col-10 {
