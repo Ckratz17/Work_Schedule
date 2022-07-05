@@ -1,5 +1,4 @@
-//save button to local storage
-var saveBtn = document.querySelectorAll(".saveBtn")
+var saveBtn = document.querySelectorAll(".saveBtn")//save button to local storage
 var assignmentBox = document.querySelectorAll(".description")
 var assignment = []
 
@@ -13,17 +12,17 @@ function init() {
 function saveContent () {
   localStorage.setItem("assignment", JSON.stringify(assignment))
 }
-
+init()
 $('.saveBtn').click(saveContent)
 
-//Date for the header
-setInterval(() =>{
+
+setInterval(() =>{//Date for the header
   var time= moment().format("dddd, MMM Do")
   $("#currentDay").text(time);
 });
 
-//colors for past, present, future
-var hour = (new Date).getHours() ;
+
+var hour = (new Date).getHours();//classes for past, present, future added based on time of day
 
 function hourNine() {
 
