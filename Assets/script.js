@@ -1,17 +1,20 @@
-//save button to localstorage
-// var saveBtn = document.querySelectorAll(".saveBtn")
-// var assignmentBox = document.querySelectorAll(".description")
+//save button to local storage
+var saveBtn = document.querySelectorAll(".saveBtn")
+var assignmentBox = document.querySelectorAll(".description")
+var assignment = []
 
+function init() {
+  var storedAssignments = JSON.parse(localStorage.getItem("assignment"))
+  if (storedAssignments !== null) {
+    assignment = storedAssignments
+  }
+}
 
-// function savedAssignment() {
-//   assignmentBox.textContent = localStorage.getItem("assignment")
-// }
+function saveContent () {
+  localStorage.setItem("assignment", JSON.stringify(assignment))
+}
 
-// function saveContent(){
-
-// }
-
-// saveBtn.on('click', saveContent())
+$('.saveBtn').click(saveContent)
 
 //Date for the header
 setInterval(() =>{
@@ -153,11 +156,11 @@ function hourSix() {
   if (hour > 18 && hour < 20) {
     $('.six').removeClass('').addClass("present")
   }
-    else if (hour > 18) {
+    else if (hour > 19) {
       $('.six').removeClass('').addClass("past")
     }
     else{
-      $('.six').removeClass('present').addClass("future")
+      $('.six').removeClass('').addClass("future")
     }
 }
 hourSix()
